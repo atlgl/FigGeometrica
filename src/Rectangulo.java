@@ -44,11 +44,11 @@ public class Rectangulo extends FigurasGeometricas {
     }
 
     @Override
-    public void moverFigura(int numespacios) {
+    public void moverFigura(int numespacio) {
 
         printfig.append("-------------------------------\n");
         String espacios="";
-        for (int i = 0; i <numespacios ; i++) {
+        for (int i = 0; i <numespacio ; i++) {
             espacios+=FigurasGeometricas.TAB;
         }
 
@@ -103,7 +103,7 @@ public class Rectangulo extends FigurasGeometricas {
 
     @Override
     public String toString() {
-        return "Cuadrado{ Lado:"+this.base+",fecha: "+ String.format(new Date().toString(),"dd/mm/yyy" )+"}";
+        return "Rectangulo { Ancho:"+this.base+"Altura: "+this.altura+",fecha: "+ String.format(new Date().toString(),"dd/mm/yyy" )+"}";
     }
 
 }

@@ -43,11 +43,11 @@ public class Cuadrado extends FigurasGeometricas {
     }
 
     @Override
-    public void moverFigura(int numespacios) {
+    public void moverFigura(int numespacio) {
 
         printfig.append("-------------------------------\n");
         String espacios="";
-        for (int i = 0; i <numespacios ; i++) {
+        for (int i = 0; i <numespacio ; i++) {
             espacios+=FigurasGeometricas.TAB;
         }
 
