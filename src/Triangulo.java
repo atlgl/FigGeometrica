@@ -12,41 +12,39 @@ public class Triangulo extends FigurasGeometricas {
 
     @Override
     public int calcularArea() {
-        return (this.base*this.altura)/2;
+
+        int area= (int) ((Math.sqrt(3)/4) * Math.pow(this.base,2));
+        return area;
     }
 
     @Override
     public void rotarFigura() {
 
-
+        printfig.append("----------180 Triangulo-------------\n");
         for (int k=1;k<=base;k++)
         {
-
             printfig.append(" *");
         }
-
         printfig.append("\n");
 
         for (int k=2;k<=base-1;k++)
         {
+            for(int j=0;j<k;j++)
+                printfig.append(" ");
 
-            printfig.append(" *");
-
-            for (int j=1;j<=base-2;j++)
-                printfig.append("_");
             printfig.append("*");
+
+            for(int t=k;t<(2*base)-(k+1);t++)
+                printfig.append(" ");
+            printfig.append("*");
+
             printfig.append("\n");
-
-            for (int j=1;j<=base-k;j++)
-                printfig.append("_");
-            printfig.append("*");
         }
-        printfig.append("\n");
-
-        for (int k=1;k<=base-1;k++)
+        for (int k=1;k<=base;k++)
             printfig.append(" ");
         printfig.append("*");
 
+        printfig.append("\n---------------______----------------------");
     }
 
     @Override
