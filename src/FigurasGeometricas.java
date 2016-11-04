@@ -13,11 +13,14 @@ public abstract class FigurasGeometricas
     protected int gradosrotacion;
     protected int altura;
     protected int base;
-    protected int matriz[][];
 
+    public StringBuilder getPrintfig() {
+        return printfig;
+    }
 
-
-
+    public void setPrintfig(StringBuilder printfig) {
+        this.printfig = printfig;
+    }
 
     public abstract int calcularArea();
 

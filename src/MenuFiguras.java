@@ -1,3 +1,4 @@
+import java.util.LinkedList;
 import java.util.Scanner;
 
 /**
@@ -6,9 +7,11 @@ import java.util.Scanner;
 public class MenuFiguras {
 
     private Scanner scan;
+    private LinkedList<FigurasGeometricas> figuras;
 
     public MenuFiguras() {
         this.scan = new Scanner(System.in);
+        figuras=new LinkedList<>();
     }
 
     public void mostrarMenu(){
@@ -30,6 +33,7 @@ public class MenuFiguras {
                     Cuadrado cuadrado = new Cuadrado(leerInt());
 
                     menuFiguras(cuadrado);
+                    figuras.add(cuadrado);
 
                     break;
                 case 2:
@@ -38,6 +42,7 @@ public class MenuFiguras {
                     System.out.println("Tamaño del triangulo\n");
                     Triangulo triangulo = new Triangulo(leerInt());
                     menuFiguras(triangulo);
+                    figuras.add(triangulo);
                     break;
 
                 case 3:
@@ -46,14 +51,30 @@ public class MenuFiguras {
                     int altura=leerInt();
                     System.out.println("Proporcione el ancho\n");
                     int ancho=leerInt();
-                    Rectangulo rectangulo = new Rectangulo();
-                    //menuFiguras(rectangulo);
+                    Rectangulo rectangulo = new Rectangulo(ancho,altura);
+                    menuFiguras(rectangulo);
+                    figuras.add(rectangulo);
                     break;
                 case 4:
+                    if(!figuras.isEmpty()){
+                        System.out.println("Nombre del archivo ??\n");
+                        GuardarTexto guardarTexto=new GuardarTexto(leerString());
+                        guardarTexto.openFile();
+                        for (int i = 0; i <figuras.size() ; i++) {
+                            guardarTexto.guardarLineaTxt(figuras.get(i).getPrintfig().toString());
+                        }
+                        guardarTexto.close();
+                    }
+                    else{
+                        System.out.println("Debe agregar algunas figuras");
+                    }
                     break;
                 case 5:
-                    break;
-                case 6:
+                    if(!figuras.isEmpty()){
+                        for (int i = 0; i <figuras.size() ; i++) {
+                            System.out.println(figuras.get(i).getPrintfig().toString());
+                        }
+                    }
                     break;
                 default:
                     System.out.println("Opcion no disponible");
@@ -81,7 +102,7 @@ public class MenuFiguras {
                     break;
                 case 2:
                     figura.rotarFigura();
-                    figura.rotarFigura();
+                    figura.imprimir();
                     break;
                 case 3:
                     System.out.println("Cuantos espacios desea mover la figura?\n");
@@ -90,6 +111,7 @@ public class MenuFiguras {
                     break;
                 case 4:
                     System.out.println("Area Calculada es:"+figura.calcularArea()+"\n");
+                    break;
             }
 
         }while(opcfig!=5);

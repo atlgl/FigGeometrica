@@ -9,7 +9,7 @@ public class Triangulo extends FigurasGeometricas {
 
     @Override
     public int calcularArea() {
-        return 0;
+        return (this.base*this.altura)/2;
     }
 
     @Override
@@ -35,7 +35,7 @@ public class Triangulo extends FigurasGeometricas {
         {
             for (int j=1;j<=base-k;j++)
                 System.out.print(" ");
-                System.out.print("*");
+            System.out.print("*");
             for (int j=1;j<=2*k-3;j++)
                 System.out.print(" ");
             System.out.print("*");

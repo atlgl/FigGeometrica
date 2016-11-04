@@ -7,10 +7,8 @@ public class Cuadrado extends FigurasGeometricas {
 
 
     public Cuadrado(int lado) {
-
             this.base=this.altura=lado;
             printfig=new StringBuilder();
-            matriz = new int[this.base][this.altura];
     }
 
     @Override
@@ -25,19 +23,19 @@ public class Cuadrado extends FigurasGeometricas {
         for (int fila=1;fila<=base;fila++)
         {
             for (int j=1;j<=base-fila;j++)
-                System.out.print(" ");
+                printfig.append(" ");
             for (int j=1;j<=fila;j++)
-                System.out.print("* ");
-            System.out.print("\n");
+                printfig.append("* ");
+            printfig.append("\n");
         }
 
         for (int fila=1;fila<=base-1;fila++)
         {
             for (int j=1;j<=fila;j++)
-                System.out.print(" ");
+                printfig.append(" ");
             for (int j=1;j<=base-fila;j++)
-                System.out.print("* ");
-            System.out.print("\n");
+                printfig.append("* ");
+            printfig.append("\n");
         }
 
         printfig.append("-------------------------------\n");
