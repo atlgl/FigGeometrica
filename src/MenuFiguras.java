@@ -3,17 +3,25 @@ import java.util.Scanner;
 
 /**
  * Created by ANGELUS on 30/10/16.
+ * Clase que muestra todos los menus dentro de la aplicación
  */
 public class MenuFiguras {
 
     private Scanner scan;
     private LinkedList<FigurasGeometricas> figuras;
 
+    /**
+     * Constructor por default del menu de figuras
+     */
     public MenuFiguras() {
         this.scan = new Scanner(System.in);
         figuras=new LinkedList<>();
     }
 
+    /**
+     * Metodo que muestra toda a estructura del menu principal del programa
+     * Selección de los objetos a crear
+     */
     public void mostrarMenu(){
         int opc=0;
         do{
@@ -81,11 +89,12 @@ public class MenuFiguras {
             }
 
         }while(opc!=6);
-
-
     }
 
-
+    /**
+     * Metodo que muestra el menu de las operaciones que se pueden hacer con las figuras geometricas
+     * @param figura
+     */
     public void menuFiguras(FigurasGeometricas figura){
         int opcfig=0;
         do{
@@ -118,7 +127,11 @@ public class MenuFiguras {
 
     }
 
-
+    /**
+     * Metodo leer un entero evita que una lectura cause algun error en pantalla
+     * Retorna el entero leido del teclado
+     * @return int
+     */
     public  int leerInt(){
         try{
             return scan.nextInt();
@@ -128,6 +141,11 @@ public class MenuFiguras {
         return 0;
     }
 
+    /**
+     * Metodo leer una cadena de texto evita excepciones en la lectura de una cadena de texto
+     * Retorna la cadena de texto leida
+     * @return String
+     */
     public String leerString(){
         try{
             return scan.next();
@@ -137,6 +155,10 @@ public class MenuFiguras {
         return "";
     }
 
+    /**
+     * Metodo principal que sirve para ejecutar la aplicacion de escritorio
+     * @param args
+     */
     public static void main(String args[]){
         MenuFiguras mf=new MenuFiguras();
         mf.mostrarMenu();

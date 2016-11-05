@@ -2,24 +2,33 @@ import java.util.Date;
 
 /**
  * Created by ANGELUS on 29/10/16.
+ * Clase encargada de crear una figura y de dibujarla en consola
  */
 public class Rectangulo extends FigurasGeometricas {
 
 
-    public Rectangulo() {
-    }
-
+    /**Constructor que permite crear un Rectangulo segun el alto y el ancho
+     * @param ancho int
+     * @param altura int
+     */
     public Rectangulo(int ancho, int altura) {
         this.altura = altura;
         this.base = ancho;
         this.printfig=new StringBuilder();
     }
 
+    /**
+     * Metodo Sobrecargado que calcula el area de un cuadrado devuelve el valor en forma de entero
+     * @return int
+     */
     @Override
     public int calcularArea() {
         return base*altura;
     }
 
+    /**
+     * Metodo que se encarga de Rotar una figura
+     */
     @Override
     public void rotarFigura() {
         printfig.append("-----------90 Grados-----------------\n");
@@ -43,6 +52,11 @@ public class Rectangulo extends FigurasGeometricas {
 
     }
 
+
+    /**
+     * Metodo sobrecargado que permite mover una figura
+     * @param numespacio
+     */
     @Override
     public void moverFigura(int numespacio) {
 
@@ -72,7 +86,9 @@ public class Rectangulo extends FigurasGeometricas {
         printfig.append("\n-------------------------------\n");
     }
 
-
+    /**
+     * Metodo Sobrecargado que se encarga de pintar una figura en este caso el cuadrado
+     */
     @Override
     public void pintar() {
 
@@ -96,11 +112,18 @@ public class Rectangulo extends FigurasGeometricas {
         printfig.append("\n\n-------------------------------\n");
     }
 
+    /**
+     * Metodo Sobrecargado que sirve para imprimir un documento de texto
+     */
     @Override
     public void imprimir() {
         System.out.println(printfig);
     }
 
+    /**
+     * Metodo Sobrecargado que sirve para imprimir todos los atributos del cuadrado
+     * @return String
+     */
     @Override
     public String toString() {
         return "Rectangulo { Ancho:"+this.base+"Altura: "+this.altura+",fecha: "+ String.format(new Date().toString(),"dd/mm/yyy" )+"}";

@@ -2,14 +2,23 @@ import java.util.Date;
 
 /**
  * Created by ANGELUS on 29/10/16.
+ * Clase encargada de crear una figura y de dibujarla en consola
  */
 public class Triangulo extends FigurasGeometricas {
 
+    /**
+     * Constructor de una figura geometrica triangulo
+     * Recibe como parametro la medida del triangulo
+     * @param base Int
+     */
     public Triangulo(int base) {
         this.base = base;
         this.printfig=new StringBuilder();
     }
-
+    /**
+     * Sobreescritura del metodo calcula el area de un triangulo
+     * @return Int
+     */
     @Override
     public int calcularArea() {
 
@@ -17,6 +26,9 @@ public class Triangulo extends FigurasGeometricas {
         return area;
     }
 
+    /**
+     * Sobreecritura del metodo rota una figura en 180 Grados
+     */
     @Override
     public void rotarFigura() {
 
@@ -47,6 +59,10 @@ public class Triangulo extends FigurasGeometricas {
         printfig.append("\n---------------______----------------------");
     }
 
+    /**
+     *Sobreescritura del metodo que se encarga de desplazar una figura
+     * @param numespacio Int
+     */
     @Override
     public void moverFigura(int numespacio) {
 
@@ -83,6 +99,9 @@ public class Triangulo extends FigurasGeometricas {
 
     }
 
+    /**
+     * Sobreescritura de un metodo que se encarga de pintar un cuadrado
+     */
     @Override
     public void pintar() {
         for (int k=1;k<=base-1;k++)
@@ -109,11 +128,18 @@ public class Triangulo extends FigurasGeometricas {
         printfig.append("\n");
     }
 
+    /**
+     * Sobreescitura del metodo para imprimir el cuadrado
+     */
     @Override
     public void imprimir() {
         System.out.println(printfig);
     }
 
+    /**
+     *Sobreescritura del metodo toString imprime los atributos de la clase
+     * @return String
+     */
     @Override
     public String toString() {
         return "Triangulo{ Base:"+this.base+"Altura:"+this.altura+" Fecha: "+String.format(new Date().toString(),"dd/mm/yyy" )+"}";
